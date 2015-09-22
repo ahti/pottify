@@ -10,9 +10,9 @@ module Pottify
 
     def render
       div do
-        h1 { "#{self.count}" }.on(:click) { handle_click }
+        h1 { "#{self.count}" }
         present Spinner
-      end
+      end.on(:click) { handle_click }
     end
   end
 end
