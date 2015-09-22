@@ -11,6 +11,9 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    autoprefixer-rails (6.0.3)
+      execjs
+      json
     babel-source (5.8.26)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -18,6 +21,7 @@ GEM
     backports (3.6.6)
     execjs (2.5.2)
     hike (1.2.3)
+    json (1.8.3)
     multi_json (1.11.2)
     opal (0.8.0)
       hike (~> 1.2)
@@ -60,6 +64,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   opal (~> 0.8.0)
   opal-browser (~> 0.2.0)
   reactive-ruby!

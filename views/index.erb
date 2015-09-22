@@ -6,19 +6,25 @@
     <script src="assets/bower_components/react/react-with-addons.js"></script>
 
     <!-- React spinner from https://github.com/chenglou/react-spinner -->
+    <link href="assets/bower_components/react-spinner/react-spinner.css" rel="stylesheet" type="text/css" />
     <script src="assets/bower_components/react-spinner/index.js"></script>
-    <link href="assets/bower_components/react-spinner/react-spinner.css" rel="stylesheet" />
+
+    <!-- Semantic-UI stuff -->
+    <link href="assets/bower_components/semantic/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+    <script src="assets/bower_components/semantic/dist/semantic.min.js"></script>
 
     <!-- Application stylesheet -->
-    <link href="assets/stylesheets/app.css" rel="stylesheet" />
+    <link href="assets/stylesheets/app.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>H1 from html</h1>
-    <div id="root"></div>
+    <div class="ui container">
+      <h1 class="ui header">H1 from html</h1>
+      <div id="root"></div>
+    </div>
     <script src="assets/js/app.js"></script>
     <script>
     if (typeof(Opal) !== 'undefined') {
-      Opal.mark_as_loaded("opal");
+      //Opal.mark_as_loaded("opal");
       //Opal.mark_as_loaded("jquery.self");
       Opal.load("js/app");
     }
