@@ -1,5 +1,3 @@
-require 'react/ext/string'
-
 module Pottify
   class Counter
     include React::Component
@@ -11,7 +9,10 @@ module Pottify
     end
 
     def render
-      h1 { "#{self.count}" }.on(:click) { handle_click }
+      div do
+        button { "#{self.count}" }.on(:click) { handle_click }
+        present Spinner
+      end
     end
   end
 end
