@@ -1,5 +1,3 @@
-require 'react/ext/string'
-
 module Pottify
   class Counter
     include React::Component

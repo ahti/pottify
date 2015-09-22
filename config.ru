@@ -4,6 +4,7 @@ require 'bundler/setup'
 require 'sprockets'
 require 'sprockets/es6'
 require 'opal'
+require 'opal-browser'
 require 'react'
 require './app.rb'
 
