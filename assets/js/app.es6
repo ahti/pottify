@@ -1,4 +1,6 @@
+//= require js/components/hello.js
+
 React.render(
-  <p>P from react \o/</p>,
+  <Hello name="John" />,
   document.getElementById('root')
 );
