@@ -10,5 +10,12 @@
     <h1>H1 from html</h1>
     <div id="root"></div>
     <script src="assets/js/app.js"></script>
+    <script>
+    if (typeof(Opal) !== 'undefined') {
+      Opal.mark_as_loaded("opal");
+      //Opal.mark_as_loaded("jquery.self");
+      Opal.load("js/app");
+    }
+    </script>
   </body>
 </html>
