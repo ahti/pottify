@@ -2,5 +2,5 @@
 insert_final_newline = true
 indent_style = space
 
-[*.{js,es6}]
+[*.{js,es6,rb}]
 indent_size = 2
