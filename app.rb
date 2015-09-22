@@ -2,6 +2,6 @@ require 'sinatra/base'
 
 class PottifyApp < Sinatra::Base
   get '/' do
-    'Hello world!'
+    erb :index, format: :html5
   end
 end
