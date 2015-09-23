@@ -33,6 +33,12 @@ GEM
     opal-browser (0.2.0)
       opal
       paggio
+    opal-jquery (0.4.0)
+      opal (>= 0.7.0, < 0.9.0)
+    opal-vienna (0.7.0)
+      opal (>= 0.5.0, < 1.0.0)
+      opal-activesupport
+      opal-jquery
     paggio (0.2.4)
     rack (1.6.4)
     rack-protection (1.5.3)
@@ -67,6 +73,7 @@ DEPENDENCIES
   autoprefixer-rails
   opal (~> 0.8.0)
   opal-browser (~> 0.2.0)
+  opal-vienna
   reactive-ruby!
   sass (~> 3.4.18)
   sinatra (~> 1.4.6)

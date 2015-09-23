@@ -8,6 +8,7 @@ module Pottify
       ul do
         self.feeds.each do |i|
           li { "#{i}" }
+          # present FeedListItem
         end
       end
     end

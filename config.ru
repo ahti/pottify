@@ -7,6 +7,7 @@ require 'autoprefixer-rails'
 
 require 'opal'
 require 'opal-browser'
+require 'opal-vienna'
 require 'reactive-ruby'
 require './app.rb'
 

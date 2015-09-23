@@ -7,7 +7,11 @@ require 'js/counter'
 require 'browser'
 require 'browser/http'
 
+require 'vienna'
+
 require 'js/components/list'
+
+
 # Browser::HTTP.get "/feeds" do
 #   on :success do |res|
 #     alert res.json.inspect
