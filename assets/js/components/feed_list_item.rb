@@ -4,10 +4,13 @@ module Pottify
 
     def initialize(native)
       @native = Native(native)
+      @model = @native[:props][:model]
     end
 
     def render
-      li { "#{@native[:props][:model]}" }
+      li do 
+        a(href: "#/feeds/#{@model.id}") { "#{@model}" }
+      end
     end
   end
 end

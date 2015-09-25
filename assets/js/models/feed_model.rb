@@ -1,4 +1,4 @@
-class FeedItemModel
+class FeedModel
   attr_accessor :id 
   attr_accessor :name
 
@@ -15,8 +15,8 @@ class FeedItemModel
     {id: @id, name: @name}
   end
 
-  def self.deserialize(repr)
-    self.new(repr["id"], repr["name"])
+  def self.deserialize(serial)
+    self.new(serial["id"], serial["name"])
   end
 end
 
@@ -40,6 +40,6 @@ class FeedListModel
   end
 
   def self.deserialize(serialized)
-    self.new serialized.map { |item| FeedItemModel.deserialize item }
+    self.new serialized.map { |item| FeedModel.deserialize item }
   end
 end
