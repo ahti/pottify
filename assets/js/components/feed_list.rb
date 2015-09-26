@@ -1,13 +1,14 @@
 module Pottify
   class List
     include React::Component
-    def initialize(native)
-        @native = Native(native)
+
+    params do
+      requires :feeds, type: Pottify::FeedListModel
     end
 
     def render
       ul do
-        @native[:props][:feeds].each do |i|
+        self.params[:feeds].each do |i|
           present FeedListItem, model: i
         end
       end

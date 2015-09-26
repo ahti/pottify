@@ -2,6 +2,10 @@ module Pottify
     class FeedPage
       include React::Component
       
+      params do
+        requires :model, type: Pottify::FeedItemModel
+      end
+
       attr_accessor :model
       def initialize(native)
         @native = Native(native)

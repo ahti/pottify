@@ -1,15 +1,14 @@
 module Pottify
   class FeedListItem
     include React::Component
-
-    def initialize(native)
-      @native = Native(native)
-      @model = @native[:props][:model]
+    params do 
+      requires :model, type: Pottify::FeedItemModel
     end
 
     def render
+      model = self.params[:model]
       li do 
-        a(href: "#/feeds/#{@model.id}") { "#{@model}" }
+        a(href: "#/feeds/#{model.id}") { "#{model}" }
       end
     end
   end

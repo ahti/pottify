@@ -1,45 +1,69 @@
-class FeedModel
-  attr_accessor :id 
-  attr_accessor :name
+module Pottify
+  class FeedItemModel
+    attr_accessor :id 
+    attr_accessor :name
 
-  def initialize(id, name)
-    @id = id
-    @name = name
+    def initialize(id, name)
+      @id = id
+      @name = name
+    end
+
+    def to_s
+      "Name: #{@name}, id: #{id}"
+    end
+
+    def serialize
+      {id: @id, name: @name}
+    end
+
+    def self.deserialize(serial)
+      self.new(serial["id"], serial["name"])
+    end
   end
 
-  def to_s
-    "Name: #{@name}, id: #{id}"
+  class FeedListModel
+    attr_accessor :list
+
+    def initialize(list)
+      @list = list
+    end
+
+    def each(&block)
+      @list.each(&block)
+    end
+
+    def map(&block)
+      @list.map(&block)
+    end
+
+    def serialize()
+      list.map { |item| item.serialize }
+    end
+
+    def self.deserialize(serialized)
+      self.new serialized.map { |item| FeedItemModel.deserialize item }
+    end
   end
 
-  def serialize
-    {id: @id, name: @name}
-  end
+  class FeedModel < FeedItemModel
+    attr_accessor :id 
+    attr_accessor :name
 
-  def self.deserialize(serial)
-    self.new(serial["id"], serial["name"])
-  end
-end
+    def initialize(id, name)
+      @id = id
+      @name = name
+    end
 
-class FeedListModel
-  attr_accessor :list
+    def to_s
+      "Name: #{@name}, id: #{id}"
+    end
 
-  def initialize(list)
-    @list = list
-  end
+    def serialize
+      {id: @id, name: @name}
+    end
 
-  def each(&block)
-    @list.each(&block)
-  end
-
-  def map(&block)
-    @list.map(&block)
-  end
-
-  def serialize()
-    list.map { |item| item.serialize }
-  end
-
-  def self.deserialize(serialized)
-    self.new serialized.map { |item| FeedModel.deserialize item }
+    def self.deserialize(serial)
+      self.new(serial["id"], serial["name"])
+    end
   end
 end
